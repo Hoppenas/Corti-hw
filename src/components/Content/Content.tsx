@@ -1,20 +1,19 @@
-import React from "react";
 import "./content.scss";
 
-interface ContentProps {
+interface IContentProps {
   activeFolderAddress: Array<{
-    name?: string | undefined;
-    id?: string;
+    name: string;
+    id: string;
   }>;
-  setActiveFolder: any;
-  setActiveFolderAddress: any;
+  setActiveFolder: Function;
+  setActiveFolderAddress: Function;
 }
 
-const Content: React.FC<ContentProps> = (props) => {
+const Content = (props: IContentProps) => {
   const { activeFolderAddress, setActiveFolder, setActiveFolderAddress } =
     props;
 
-  const renderActiveFolder = (id?: string | undefined, index?: number) => {
+  const renderActiveFolder = (id?: string, index?: number) => {
     setActiveFolder(id);
     setActiveFolderAddress(activeFolderAddress.slice(0, index));
   };

@@ -13,15 +13,15 @@ interface Idata {
 
 const Main = () => {
   const [data, setData] = useState<Idata>({});
-  const [activeFolder, setActiveFolder] = useState("");
+  const [activeFolder, setActiveFolder] = useState<string>("");
   const [activeFolderAddress, setActiveFolderAddress] = useState([]);
   const url = "https://run.mocky.io/v3/8a593f7c-8dc4-4247-bbc4-b4d4d58c1e0b";
 
   useEffect(() => {
     axios
       .get(url)
-      .then((response: any) => {
-        setData(response.data);
+      .then((response) => {
+        setData(response.data as Idata);
       })
       .catch((error) => console.error(`Error: ${error}`));
   }, []);

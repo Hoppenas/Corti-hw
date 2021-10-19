@@ -1,17 +1,21 @@
-import React from "react";
-
 import "./navigation.scss";
 import Node from "../Node/Node";
 
-interface NavigationProps {
-  data: any;
-  activeFolder: string;
-  setActiveFolder: any;
-  setActiveFolderAddress: any;
-  parentFolder?: any;
+interface IData {
+  name: string;
+  id: string;
+  subfolder?: [IData];
 }
 
-const Navigation: React.FC<NavigationProps> = (props) => {
+interface INavigationProps {
+  data: any;
+  activeFolder: string;
+  setActiveFolder: Function;
+  setActiveFolderAddress: Function;
+  parentFolder: Array<IData>;
+}
+
+const Navigation = (props: INavigationProps) => {
   const {
     data,
     activeFolder,

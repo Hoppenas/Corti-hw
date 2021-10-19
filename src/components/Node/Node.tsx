@@ -1,19 +1,18 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import "./node.scss";
 
-interface NodeProps {
+interface INodeProps {
   name: string;
   id: string;
-  renderActiveNode?: any;
-  activeFolder?: string;
-  parentFolder?: any;
-  setActiveFolderAddress: any;
+  renderActiveNode: any;
+  activeFolder: string;
+  parentFolder: any;
+  setActiveFolderAddress: Function;
 }
 
-const Node: React.FC<NodeProps> = (props) => {
+const Node = (props: INodeProps) => {
   const {
     name,
     id,
@@ -25,7 +24,7 @@ const Node: React.FC<NodeProps> = (props) => {
 
   const renderNode = () => {
     renderActiveNode(id);
-    if (parentFolder !== [null]) {
+    if (parentFolder.length > 0) {
       const fullBreadCrumbAddress = parentFolder.concat([
         { name: name, id: id },
       ]);
