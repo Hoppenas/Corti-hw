@@ -1,0 +1,12 @@
+.main {
+  background-color: #f3f3f3;
+  display: flex;
+  min-height: 500px;
+  overflow: hidden;
+  padding-top: 15px;
+
+  .menu {
+    padding-left: 15px;
+    width: max-content;
+  }
+}

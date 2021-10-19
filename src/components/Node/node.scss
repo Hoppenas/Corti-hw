@@ -1,0 +1,20 @@
+.node {
+  background-color: #f3f3f3;
+  border: none;
+  color: #646464;
+  padding-left: 15px;
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+  cursor: pointer;
+
+  .arrow {
+    margin-right: 10px;
+    transform: rotate(-45deg);
+  }
+}
+
+.node__active {
+  border: 1px solid black;
+  border-radius: 5px;
+}
